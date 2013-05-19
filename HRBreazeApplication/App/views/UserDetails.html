@@ -1,0 +1,143 @@
+﻿<section class="view">
+
+
+    <h3 class="page-title" data-bind="text: title"></h3>
+    <div class="btn-group pull-right">
+        <button class="btn btn-info"
+            data-bind="click: goBack">
+            <i class="icon-hand-left"></i>Back</button>
+        <button class="btn btn-info"
+            data-bind="click: cancel, enable: canSave">
+            <i class="icon-undo"></i>Cancel</button>
+        <button class="btn btn-info"
+            data-bind="click: save, enable: canSave">
+            <i class="icon-save"></i>Save</button>
+
+        <input id="button1" type="button" class="btn btn-info" value="Change Photo" data-bind="click: OnUpload" />
+
+        <button class="btn btn-danger"
+            data-bind="click: deleteEntity, disable: hasChanges">
+            <i class="icon-trash"></i>Delete
+       
+        </button>
+
+
+    </div>
+    <i class="icon-asterisk" data-bind="visible: hasChanges"></i>
+    <div data-bind="with: entity">
+        <table class="table table-hover table-striped table-bordered rounded">
+            <tr>
+                <td>
+                    <label for="empName">Name</label>
+                </td>
+                <td>
+                    <input id="empName" data-bind="value: name"
+                        placeholder="User Name" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="Email">Email</label></td>
+                <td>
+                    
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-envelope"></i></span>
+                        <input class="span2" id="Email" data-bind="value: email"  type="text" placeholder="Email address">
+                    </div>
+
+
+                </td>
+            </tr>
+
+
+           
+
+            <tr>
+                <td>
+                    <label for="Phone">Phone</label></td>
+                <td>
+                   
+                     <div class="input-prepend">
+                        <span class="add-on"><i class="icon-phone"></i></span>
+                        <input class="span2" id="Phone" data-bind="value: phone"  type="text" placeholder="Phone">
+                    </div>
+
+                </td>
+            </tr>
+
+
+             <tr>
+                <td>
+                    <label>Photo</label></td>
+                <td>
+                    <input data-bind="value: photo, visible: false" placeholder="Photo" id="photo" />
+                    <img data-bind="attr: { src: imageName }" class="img-polaroid" />
+
+
+                </td>
+            </tr>
+            <!--<tr>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>-->
+        </table>
+
+    </div>
+
+
+    <h3 class="page-title">Manage Roles</h3>
+
+    <table class="table table-hover table-striped table-bordered rounded">
+        <thead>
+            <tr>
+                <th>Available roles</th>
+                <th></th>
+                <th>Assigned Roles</th>
+
+            </tr>
+
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <select style="width:100%;" id="available_roles" multiple="multiple" height="5" data-bind="options: available_roles, optionsText: 'roleName', optionsValue: 'roleId'">
+                    </select>
+                </td>
+                <td style="width:50px;">
+                    <button class="btn btn-info"
+                        data-bind="click: MoveToAssigned">
+                        <i class="icon-circle-arrow-right icon-2x"></i>
+                    </button>
+                    <br />
+                    <br />
+                    <button class="btn btn-info"
+                        data-bind="click: MoveToAvailable">
+                        <i class="icon-circle-arrow-left icon-2x"></i>
+                    </button>
+
+                </td>
+                <td>
+                    <select style="width:100%;"  id="assigned_roles" multiple="multiple" height="5" data-bind="options: assigned_roles, optionsText: 'roleName', optionsValue: 'roleId'">
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+    <form method="post">
+
+        <input id="file1" name="file1" type="file" accept="image/*" multiple="multiple" data-bind="visible: false" />
+
+    </form>
+</section>

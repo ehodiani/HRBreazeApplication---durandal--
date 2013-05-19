@@ -1,0 +1,131 @@
+﻿<!--Employee.html-->
+
+<section class="view">
+    <header>
+        <div class="btn-group pull-right">
+            <a class="btn btn-info"
+                data-bind="click: refresh" href="#"><i class="icon-refresh"></i> Refresh</a>
+
+            <a class="btn btn-success"
+                data-bind="click: gotoAddNew" href="#"><i class="icon-file"></i> Add New</a>
+
+            <a class="btn btn-info"
+                data-bind="click: viewSearch" href="#"><i class="icon-double-angle-down"></i> Search</a>
+        </div>
+
+        <h3 class="page-title" data-bind="text: title"></h3>
+
+        <div class="article-counter">
+            <address data-bind="text: totalrecords"></address>
+            <address>found</address>
+        </div>
+
+    </header>
+
+    <div id="advancedSearch" data-bind="visible: false">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        <span>Advanced Search</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="txtName">Name</label>
+                    </td>
+                    <td>
+                        <input id="txtName" placeholder="Enter Name"  data-bind="value: fs_name"/>
+                    </td>
+
+                    <td>
+                        <label for="txtPhone">Phone</label>
+                    </td>
+                    <td>
+                        <input id="txtPhone" placeholder="Enter Phone" data-bind="value: fs_phone" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="dropdownDepartmentId">Department</label></td>
+                    <td>
+                        <select id="dropdownDepartmentId" data-bind="options: departments, optionsText: 'name', optionsValue: 'id', value: fs_departmentid"></select>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-info"
+                                data-bind="click: search" href="#"><i class="icon-filter"></i> Filter</a>
+                            <a class="btn btn-success"
+                                data-bind="click: clear" href="#"><i class="icon-magic"></i> Clear</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <!-- ko foreach: columns -->
+                    <th data-bind="click: sortable ? $parent.sort : '', style: { width: width, cursor: sortable ? 'pointer' : '' }">
+                        <span data-bind="text: name"></span>
+                        <span class="icon-white icon-circle-arrow-down pull-right" data-bind="visible: $parent.sortOrder() === 'desc' && sortable && $parent.orderby() === index"></span>
+                        <span class="icon-white icon-circle-arrow-up  pull-right" data-bind="visible: $parent.sortOrder() === 'asc' && sortable && $parent.orderby() === index"></span>
+                    </th>
+                    <!-- /ko -->
+
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: entities">
+                <tr class="session-brief">
+                    <td>
+                        <address data-bind="text: id"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: name"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: salary"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: email"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: phone"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: department().name"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: employee_Created_By().userName"></address>
+                    </td>
+
+                    <td>
+                        <address data-bind="text: employee_Updated_By().userName"></address>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <!-- ko compose: {view: 'pagination' } -->
+        <!-- /ko -->
+    </div>
+
+</section>

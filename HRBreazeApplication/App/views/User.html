@@ -1,0 +1,59 @@
+﻿<section class="view">
+    <header>
+        <div class="btn-group pull-right">
+
+            <a class="btn btn-info"
+                data-bind="click: refresh" href="#"><i class="icon-refresh"></i> Refresh</a>
+
+            <a class="btn btn-success"
+                data-bind="click: gotoAddNew" href="#"><i class="icon-file"></i> Add New</a>
+        </div>
+        <h3 class="page-title" data-bind="text: title"></h3>
+        <div class="article-counter">
+            <address data-bind="text: totalrecords"></address>
+            <address>found</address>
+        </div>
+    </header>
+
+
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>UserName</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: entities">
+            <tr class="session-brief">
+                <td>
+                    <img data-bind="attr: { src: imageName }" class="img-polaroid" />
+                </td>
+
+                <td>
+                    <address data-bind="text: userId"></address>
+                </td>
+                <td>
+                    <address data-bind="text: userName"></address>
+                </td>
+                <td>
+                    <address data-bind="text: name"></address>
+                </td>
+                <td>
+                    <address data-bind="text: phone"></address>
+                </td>
+                <td>
+                    <address data-bind="text: email"></address>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- ko compose: {view: 'pagination' } -->
+    <!-- /ko -->
+
+
+</section>
+

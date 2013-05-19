@@ -1,0 +1,160 @@
+﻿<section class="view">
+
+
+    <h3 class="page-title" data-bind="text: title"></h3>
+    <div class="btn-group  pull-right">
+        <button class="btn btn-info"
+            data-bind="click: goBack">
+            <i class="icon-hand-left"></i>Back</button>
+
+        <button class="btn btn-info"
+            data-bind="click: save">
+            <i class="icon-save"></i>Save</button>
+
+
+
+
+    </div>
+    
+    <div>
+        <table class="table table-hover table-striped table-bordered rounded">
+            <tr>
+                <td>
+                    <label for="Username">Name</label>
+                </td>
+                <td>
+                    <input id="Username"
+                        placeholder="User Name" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="Password">Password</label></td>
+                <td>
+
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-key"></i></span>
+                        <input class="span2" id="Password" type="password" placeholder="Enter Password">
+                    </div>
+
+
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>
+                    <label for="ConfirmPassword">Confirm Password</label></td>
+                <td>
+
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-key"></i></span>
+                        <input class="span2" id="ConfirmPassword" type="password" placeholder="Confirm Password">
+                    </div>
+
+                </td>
+            </tr>
+
+
+
+        </table>
+
+    </div>
+
+    <h3 class="page-title">Basic Infomation</h3>
+
+    <div>
+        <table class="table table-hover table-striped table-bordered rounded">
+            <tr>
+                <td>
+                    <label for="FullName">Full Name</label>
+                </td>
+                <td>
+                    <input id="FullName"
+                        placeholder="Full Name" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="Email">Email</label></td>
+                <td>
+
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-envelope"></i></span>
+                        <input class="span2" id="Email" type="text" placeholder="Enter Email">
+                    </div>
+
+
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>
+                    <label for="Phone">Phone</label></td>
+                <td>
+
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-phone"></i></span>
+                        <input class="span2" id="Phone" type="text" placeholder="Phone">
+                    </div>
+
+                </td>
+            </tr>
+
+
+
+        </table>
+
+    </div>
+
+    <h3 class="page-title">Manage Roles</h3>
+
+    <table class="table table-hover table-striped table-bordered rounded">
+        <thead>
+            <tr>
+                <th>Available roles</th>
+                <th></th>
+                <th>Assigned Roles</th>
+
+            </tr>
+
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <select style="width: 100%;" id="available_roles" multiple="multiple" size="5" data-bind="options: available_roles, optionsText: 'roleName', optionsValue: 'roleId'">
+                    </select>
+                </td>
+                <td style="width: 50px;">
+                    <button class="btn btn-info"
+                        data-bind="click: MoveToAssigned">
+                        <i class="icon-circle-arrow-right icon-2x"></i>
+                    </button>
+                    <br />
+                    <br />
+                    <button class="btn btn-info"
+                        data-bind="click: MoveToAvailable">
+                        <i class="icon-circle-arrow-left icon-2x"></i>
+                    </button>
+
+                </td>
+                <td>
+                    <select style="width: 100%;" id="assigned_roles" multiple="multiple" size="5" data-bind="options: assigned_roles, optionsText: 'roleName', optionsValue: 'roleId'">
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</section>

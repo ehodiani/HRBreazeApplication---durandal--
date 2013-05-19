@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>breezePagedGrid.widget</id>
+    <version>0.9</version>
+    <title>breezePagedGrid Durandal widget</title>
+    <authors>Josh Garverick</authors>
+    <owners>Josh Garverick</owners>
+    <projectUrl>https://github.com/jgarverick/breezePagedGrid</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A fairly responsive paged data grid for use with Durandal and Breeze.  This package contains the Durandal widget as well as initial documentation.</description>
+    <summary>A fairly responsive paged data grid for use with Durandal and Breeze.</summary>
+    <releaseNotes />
+    <copyright>Copyright  2013</copyright>
+    <language>en-US</language>
+    <tags>BreezeJS Durandal Knockout web grid EntityFramework</tags>
+    <dependencies>
+      <dependency id="Durandal" version="1.2.0" />
+      <dependency id="Breeze.WebApi" version="1.2.7" />
+      <dependency id="Microsoft.AspNet.Mvc" version="4.0.20710.0" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>

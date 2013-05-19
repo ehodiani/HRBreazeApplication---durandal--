@@ -1,0 +1,59 @@
+﻿@using System.Web.Optimization
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    @Styles.Render("~/Content/css")
+   
+
+    <script language="javascript">
+        // Must be first. IE10 mobile viewport fix
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    @Scripts.Render("~/scripts/modernizr")
+    @Scripts.Render("~/scripts/jqury")
+    @Scripts.Render("~/scripts/knockout")
+</head>
+<body>
+
+    @Html.AntiForgeryToken() 
+    @if (@User.Identity.IsAuthenticated) //do we have a valid user or not
+    {
+        
+        //valid user
+        <div id="applicationHost">
+            @Html.Partial("_splash")
+        </div>
+
+        @Scripts.Render("~/scripts/vendor")
+         @Scripts.Render("~/scripts/moment")
+         @Scripts.Render("~/scripts/sammy")
+         @Scripts.Render("~/scripts/q")
+         @Scripts.Render("~/scripts/breeze")
+         @Scripts.Render("~/scripts/toastr")
+        
+        <script src="/App/durandal/amd/require.js" data-main="App/main"></script>
+       
+    }
+    else
+    {
+        //no valid user
+       
+        @Scripts.Render("~/scripts/vendor")   //not sure all of these are needed but it works so it suffices for an example
+        <div id="login">
+            @Html.Partial("Login")
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <a class="brand" href="/">
+            <span class="title">HR</span>
+            <span class="jump-start-title">human resource management</span>
+        </a>
+        <div data-bind="css: { active: router.isNavigating }" class="pull-right loader">
+            <i class="icon-spinner icon-2x icon-spin"></i>
+        </div>
+
+        <div class="pull-right">
+
+            <form method="post" action="Account/LogOff" id="logoutForm">
+                <input type="hidden" name="__RequestVerificationToken" data-bind="value: token" />
+
+            </form>
+
+            <div style="background-color: black; color: white; padding: 5px; text-transform: none; font-weight: bold;">
+                Welcome: <span data-bind="text: currentUser" class="article-counter"></span>!
+            [<a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a>] <input id="currentUserId" name="currentUserId" data-bind="value: currentUserId,visible:false"/>
+            </div>
+        </div>
+
+    </div>
+    <div class="navbar-inner navbar-secondary">
+        <div class="btn-group" data-bind="foreach: router.visibleRoutes">
+            <a data-bind="attr: { href: hash }, css: { active: isActive }, html: caption" class="btn btn-info"></a>
+        </div>
+
+
+        <div class="btn-group"  data-bind="visible: isAdmin">
+            <a class="btn btn-info dropdown-toggle"
+                data-toggle="dropdown">
+                <i class="icon-user"></i>
+                <span class="text">Administration</span>
+                <span class="caret"></span></a>
+
+            <ul class="dropdown-menu pull-left">
+                <!-- ko foreach: adminRoutes -->
+                <li><a href="#" data-bind="click: $parent.addSession, html: caption" style="width:200px;"></a></li>
+                <!-- /ko -->
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</nav>
+

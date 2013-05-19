@@ -1,0 +1,88 @@
+﻿<!--EmployeeDetails.html-->
+<section class="view">
+    <h3 class="page-title" data-bind="text: title"></h3>
+    <div class="btn-group pull-right">
+        <button class="btn btn-info"
+            data-bind="click: goBack">
+            <i class="icon-reply"></i> Back</button>
+
+        <button class="btn btn-info"
+            data-bind="click: cancel, enable: canSave, visible: isEdit">
+            <i class="icon-undo"></i> Cancel</button>
+
+        <button class="btn btn-info"
+            data-bind="click: save, enable: canSave">
+            <i class="icon-save"></i> Save</button>
+
+        <button class="btn btn-danger"
+            data-bind="click: deleteEntity, disable: hasChanges, visible: isEdit">
+            <i class="icon-trash"></i> Delete </button>
+
+    </div>
+    <i class="icon-asterisk" data-bind="visible: hasChanges"></i>
+
+    <div data-bind="with: entity">
+
+        <table class="table table-hover table-striped table-bordered rounded">
+                <tr>
+                    <td>
+                        <label for="txtName">Name</label>
+                    </td>
+                    <td>
+                        <input id="txtName" data-bind="value: name" placeholder="Enter Name" />
+                    </td>
+
+                    <td>
+                        <label for="txtSalary">Salary</label>
+                    </td>
+                    <td>
+                        <input id="txtSalary" data-bind="value: salary" placeholder="Enter Salary" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="txtEmail">Email</label>
+                    </td>
+                    <td>
+                        <input id="txtEmail" data-bind="value: email" placeholder="Enter Email" />
+                    </td>
+
+                    <td>
+                        <label for="txtPhone">Phone</label>
+                    </td>
+                    <td>
+                        <input id="txtPhone" data-bind="value: phone" placeholder="Enter Phone" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="dropdownDepartmentId">Department</label></td>
+                    <td>
+                        <select id="dropdownDepartmentId" data-bind="options: $parent.departments, optionsText: 'name', value: department"></select>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            <tr data-bind="visible: false">
+                <td><label  for="Created_By">Created_By</label></td>
+                <td><input id="Created_By" data-bind="value: created_By" placeholder="Created_By" /></td>
+
+                 <td><label for="Updated_By">Updated_By</label></td>
+                <td> <input id="Updated_By" data-bind="value: updated_By" placeholder="Updated_By" /></td>
+            </tr>
+
+             <tr data-bind="visible: false">
+                <td><label  for="Date_Created">Date_Created</label></td>
+                <td><input id="Date_Created" data-bind="value: date_Created" placeholder="Date_Created" /></td>
+
+                 <td><label for="Date_Updated">Date_Updated</label></td>
+                 <td> <input id="Date_Updated" data-bind="value: date_Updated" placeholder="Date_Updated" /></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
