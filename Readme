@@ -3,18 +3,12 @@ Welcome to the HRBreazeApplication  project!
 this appliation takes the existing Durandal Single Page Application (SPA) project in ASP.NET MVC and adds in Server-side Authentication using the built-in Simple Membership and OAUTH membership included in the .NET 4.0 & 4.5 Frameworks.
 
 
-its  a good sample to use breaze and memberships ,its an SPA application build on Durandal
+its  a good sample to use breaze and memberships ,its  SPA application build on Durandal
 
 
 in this application we are using a many views to see you how can you use the SPA in a big projects
 
 
-Demo:
-
-http://68.71.137.4/hr/
-
-username: admin
-password: admin@11
 
 
 
